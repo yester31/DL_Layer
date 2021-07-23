@@ -100,7 +100,7 @@ void scalarTensor(vector<float>& output, int OC, int IC, int KH, int KW, float s
 	}
 }
 
-void tofile(vector<float> &Buffer, string fname = "C_Tensor") {
+void tofile(vector<float> &Buffer, string fname = "../../output/C_Tensor") {
 	std::ofstream fs(fname, ios::binary);
 	if (fs.is_open())
 		fs.write((const char*)Buffer.data(), Buffer.size() * sizeof(float));
@@ -109,9 +109,9 @@ void tofile(vector<float> &Buffer, string fname = "C_Tensor") {
 
 int main()
 {
-	int OC = 1;
-	int IC = 1;
-	int IN = 1;
+	int OC = 3;
+	int IC = 2;
+	int IN = 2;
 	int IH = 4;
 	int IW = 4;
 	int KH = 3;
