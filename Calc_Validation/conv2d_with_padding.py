@@ -1,4 +1,4 @@
-import torch # v1.8.0
+import torch # torch 1.9.0+cu111
 import numpy as np
 from compare import *
 
