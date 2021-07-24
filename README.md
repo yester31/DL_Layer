@@ -9,14 +9,13 @@ DL_Layer
 
 
 기능
--------------
-
-## 완성
+------------
+### 완성
 - Conservertive_Convolution
 - Zero Padding
 - Pooling (Avg, Max)
 
-## 예정
+### 예정
 - Eltwise (Prod, Sum)
 - Activation (Tan, Sigmoid, ReLU, Swish)
 - Reshape
@@ -29,4 +28,5 @@ DL_Layer
 
 검증
 -------------
+Calc_Validation   
 torch 1.9.0+cu111 버전을 이용하여 계산 결과값 비교
