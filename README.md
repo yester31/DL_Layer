@@ -4,19 +4,21 @@ DL_Layer
 
 아키텍쳐 설계
 ------------
-
+계획중
 
 
 
 기능
 ------------
 ### 완성
-- Conservertive_Convolution
-- Zero Padding
-- Pooling (Avg, Max)
+
+- Conventional_Conv2d
+- Zero_Padding
+- Pool2d (Avg, Max)
+- Eltwise (Prod, Sum)
 
 ### 예정
-- Eltwise (Prod, Sum)
+
 - Activation (Tan, Sigmoid, ReLU, Swish)
 - Reshape
 - Dense
