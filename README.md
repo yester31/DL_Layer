@@ -16,13 +16,12 @@ DL_Layer
 - Zero_Padding
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
+- Activation (Tan, Sigmoid, ReLU, Swish)
 
 ### 예정
-
-- Activation (Tan, Sigmoid, ReLU, Swish)
-- Reshape
 - Dense
 - Softmax
+- Reshape
 - BatchNorm
 - Transformer
 - GlobalAvgPooling
