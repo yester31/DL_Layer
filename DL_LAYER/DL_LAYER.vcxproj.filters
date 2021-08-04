@@ -33,6 +33,12 @@
     <ClCompile Include="Activation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="FullyConnected.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftMax.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">

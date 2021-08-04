@@ -1,4 +1,4 @@
-// 2021-8-03 by YH PARK
+// 2021-8-03 by YH PARK // 검증 필요
 
 /***************************************************************************
 	Activateion function algotirhm (Tanh, ReLU, Sigmoid)
@@ -33,7 +33,7 @@ T act_ReakyRelu(T x, T a = 0.01) {
 }
 
 template <typename T>
-const T ActivationMode(const T x, const T a = 0.01, act_func Mode = Linear)
+const T ActivationMode(const T x, act_func Mode, const T a)
 {
 	switch (Mode)
 	{
@@ -58,13 +58,13 @@ const T ActivationMode(const T x, const T a = 0.01, act_func Mode = Linear)
 }
 
 template <typename T>
-void activation(vector<T>& Output, vector<T>& Input, act_func mode) {
+void activation(vector<T>& Output, vector<T>& Input, act_func mode = Linear, const T a = 0.01) {
 	cout << "===== activation ===== \n";
 	Output.resize(Input.size());
 
 	for (int i = 0; i < Input.size(); i++)
 	{
-		Output[i] = ActivationMode(Input[i], mode);
+		Output[i] = ActivationMode(Input[i], mode, a);
 	}
 }
 

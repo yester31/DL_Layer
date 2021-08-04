@@ -5,27 +5,32 @@ DL_Layer
 아키텍쳐 설계
 ------------
 계획중
-
-
+model <- network <- layer <- tensor
+run(forward, backward)
 
 기능
 ------------
-### 완성
-
+### forward layer 완성
 - Conventional_Conv2d
 - Zero_Padding
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
-- Activation (Tan, Sigmoid, ReLU, Swish)
+- Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU) 검증필요
+- Dense(fullyconnected) 검증필요
+- Softmax 검증필요
 
-### 예정
-- Dense
-- Softmax
-- Reshape
-- BatchNorm
-- Transformer
+### forward layer 예정
 - GlobalAvgPooling
+- Concat
+- BatchNorm
+- DeConvolution
+- Transformer(bgr->rgb, nhwc->nchw, resize?)
 - DataLoader
+
+### 추후 예정
+- backward
+- winograd, gemm, strassen Convolution 도입
+- openmp 적용
 
 검증
 -------------

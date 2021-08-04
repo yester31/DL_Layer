@@ -155,7 +155,9 @@
     <ClCompile Include="Activation.cpp" />
     <ClCompile Include="Conv2d.cpp" />
     <ClCompile Include="Eltwise.cpp" />
+    <ClCompile Include="FullyConnected.cpp" />
     <ClCompile Include="Pool2d.cpp" />
+    <ClCompile Include="SoftMax.cpp" />
     <ClCompile Include="Utils.cpp" />
     <ClCompile Include="ZeroPad.cpp" />
   </ItemGroup>
