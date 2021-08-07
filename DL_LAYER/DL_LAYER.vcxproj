@@ -158,7 +158,9 @@
     <ClCompile Include="FullyConnected.cpp" />
     <ClCompile Include="Pool2d.cpp" />
     <ClCompile Include="SoftMax.cpp" />
-    <ClCompile Include="Utils.cpp" />
+    <ClCompile Include="Utils.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="ZeroPad.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -65,5 +65,5 @@ void eltwiseProd(vector<T>& output, vector<T>& input1, vector<T>& input2)
 //	std::cout << "======================================================" << std::endl;
 //	std::cout << "dur time :: " << frame_sec << " [micro sec]" << std::endl;
 //
-//	tofile(output, "../../Calc_Validation/output/C_Tensor_elt");
+//	tofile(output, "../Calc_Validation/output/C_Tensor_elt");
 //}

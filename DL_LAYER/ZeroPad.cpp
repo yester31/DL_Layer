@@ -82,6 +82,6 @@ void zeroPadding(vector<T>& output, vector<T>& input, int IN, int IC, int IH, in
 //
 //	std::cout << "======================================================" << std::endl;
 //	std::cout << "dur time :: " << frame_sec3 << " [micro sec]" << std::endl;
-//	tofile(output, "../../Calc_Validation/output/C_Tensor_zp");
+//	tofile(output, "../Calc_Validation/output/C_Tensor_zp");
 //}
 //

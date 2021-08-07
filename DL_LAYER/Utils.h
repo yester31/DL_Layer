@@ -44,11 +44,21 @@ void valueCheck(vector<T>& Input, int IN = 1, int IC = 1, int IH = 1, int IW = 1
 template <typename T>
 void initTensor(vector<T>& output, T start = 1, T step = 0)
 {
-	std::cout << "===== InitTensor func =====" << std::endl;
+	std::cout << "===== InitTensor func (scalar or step)=====" << std::endl;
 	T count = start;
 	for (int i = 0; i < output.size(); i++) {
 		output[i] = count;
 		count += step;
+	}
+}
+
+template <typename T>
+void initTensor(vector<T>& output, string random, T min = -10.f, T max = 10.f)
+{
+	std::cout << "===== InitTensor func (random value) =====" << std::endl;
+
+	for (int i = 0; i < output.size(); i++) {
+		output[i] = min + static_cast <T> (rand()) / (static_cast <T> (RAND_MAX / (max - min)));
 	}
 }
 
@@ -63,7 +73,7 @@ void scalarTensor(vector<T>& output, int N, int C, int H, int W, T start = 1, T 
 }
 
 template <typename T>
-void tofile(vector<T> &Buffer, string fname = "../../Calc_Validation/output/C_Tensor") {
+void tofile(vector<T> &Buffer, string fname = "../Calc_Validation/output/C_Tensor") {
 	std::ofstream fs(fname, ios::binary);
 	if (fs.is_open())
 		fs.write((const char*)Buffer.data(), Buffer.size() * sizeof(T));

@@ -8,6 +8,8 @@ DL_Layer
 model <- network <- layer <- tensor
 run(forward, backward)
 
+Tensor 클래스 구현(초기)
+
 기능
 ------------
 ### forward layer 완성
@@ -15,7 +17,7 @@ run(forward, backward)
 - Zero_Padding
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
-- Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU) 검증필요
+- Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU)
 - Dense(fullyconnected) 검증필요
 - Softmax 검증필요
 

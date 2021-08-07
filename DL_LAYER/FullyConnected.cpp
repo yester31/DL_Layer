@@ -38,3 +38,30 @@ void fullyConnected(vector<T>& Output, vector<T>& Input, vector<T>& Weight, int 
 		}
 	}
 }
+
+
+int fc_test()
+{
+	int IN = 2;
+	int IC = 2;
+	int IH = 4;
+	int IW = 4;
+
+	int OF = 3;
+
+	// weight[OC][lC][KH][KW] 
+	// 임시 weight 값 
+	vector<float> weight(OF * IC * IH * IW);
+	initTensor(weight);
+	valueCheck(weight, OF, IC, IH, IW, 1);
+
+	// d[IN][IC][IH][IW] 
+	// 임시 input 값 
+	vector<float> input(IN * IC * IH * IW);
+	initTensor(input);
+	valueCheck(input, IN, IC, IH, IW, 1);
+
+
+
+	return 0;
+}

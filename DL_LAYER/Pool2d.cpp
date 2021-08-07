@@ -113,8 +113,8 @@ void maxPooling(vector<T>& maxPoolingOutput, vector<T>& maxPoolingInput, int inp
 //	std::cout << "======================================================" << std::endl;
 //	std::cout << "dur time :: " << frame_sec << " [micro sec]" << std::endl;
 //
-//	tofile(poolingOutput, "../../Calc_Validation/output/C_Tensor_max_p");	// max pooling 사용시
-//	//tofile(poolingOutput, "../../Calc_Validation/output/C_Tensor_avg_p"); // avg pooling 사용시
+//	tofile(poolingOutput, "../Calc_Validation/output/C_Tensor_max_p");	// max pooling 사용시
+//	//tofile(poolingOutput, "../Calc_Validation/output/C_Tensor_avg_p"); // avg pooling 사용시
 //
 //}
 //
