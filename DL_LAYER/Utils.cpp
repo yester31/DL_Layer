@@ -10,19 +10,19 @@ class Tensor
 {
 public:
 
-	Tensor();
+	Tensor() : totSize(0)
+	{}
 
-	Tensor(int size) {
+	Tensor(int size) : totSize (size)
+	{
 		shape = { size };
 		data.resize(size);
-		totSize = size;
 	}
 
-	Tensor(int N, int C, int H, int W) {
+	Tensor(int N, int C, int H, int W) : totSize (N * C * H * W)
+	{
 		shape = { N,C,H,W };
 		data.resize(N * C * H * W);
-		totSize = N * C * H * W;
-
 	}
 
 	void initStep(T start = 1, T step = 0)
@@ -90,7 +90,6 @@ public:
 			}
 		}
 	}
-
 
 	vector<int> shape;
 	string name;

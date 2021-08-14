@@ -1,9 +1,69 @@
 ﻿// 2021-7-22 by YH PARK
-
+// 2021-8-14 update
 /***************************************************************************
 	Conventional Convolution algotirhm (without any option)
 ****************************************************************************/
-#include "Utils.h"
+#include "Utils.cpp"
+
+// layer(functional) class 필요 ***
+template <typename T>
+Tensor<T> convolution(Tensor<T> &inTensor, int KH, int KW, int stride, int OC) {
+	
+	// 1. weight 존재 유무 체크 없으면 -> 초기화 or 주입(전달)
+	Tensor<T> wTensor;
+	// weight 초기화함수 필요 ***
+
+	// 2. input tensor 체크 
+	vector<T> *input = inTensor.data.data();
+	int IN = inTensor.shape[0];
+	int IC = inTensor.shape[1];
+	int IH = inTensor.shape[2];
+	int IW = inTensor.shape[3];
+
+	// 3. output tenosr 생성
+	int OH = ((IH - KH) / stride) + 1;
+	int OW = ((IW - KW) / stride) + 1;
+	Tensor<T> outTensor(IN, OC, OH, OW);
+	vector<T> *output = outTensor.data.data();
+
+	// 4. 연산 수행 
+	std::cout << "===== Convolution ===== \n" << std::endl;
+
+	int C_offset_i, C_offset_o, C_offset_k, H_offset_i, H_offset_o, H_offset_k, W_offset_i, W_offset_o, W_offset_k, ⁠g_idx_i, g_idx_o, g_idx_k;
+	int N_offset_i = IC * IH * IW;
+	int N_offset_o = OC * OH * OW;
+	int N_offset_k = IC * KH * KW;
+	for (int ⁠n_idx = 0; ⁠n_idx < IN; ⁠n_idx++) {
+		C_offset_i = ⁠n_idx * N_offset_i;
+		C_offset_o = ⁠n_idx * N_offset_o;
+		for (int k_idx = 0; k_idx < OC; k_idx++) {
+			C_offset_k = k_idx * N_offset_k;
+			H_offset_o = k_idx * OH * OW + C_offset_o;
+			for (int ⁠c_idx = 0; ⁠c_idx < IC; ⁠c_idx++) {
+				H_offset_i = ⁠c_idx * IH * IW + C_offset_i;
+				H_offset_k = ⁠c_idx * KH * KW + C_offset_k;
+				for (int rowStride = 0; rowStride < OH; rowStride++) {
+					W_offset_o = rowStride * OW + H_offset_o;
+					for (int colStride = 0; colStride < OW; colStride++) {
+						float sum = 0;
+						g_idx_o = colStride + W_offset_o;
+						for (int y = rowStride * stride; y < rowStride * stride + KH; y++) {
+							W_offset_i = y * IW + H_offset_i;
+							W_offset_k = (y - rowStride * stride) * KH + H_offset_k;
+							for (int x = colStride * stride; x < colStride * stride + KW; x++) {
+								⁠g_idx_i = x + W_offset_i;
+								g_idx_k = (x - colStride * stride) + W_offset_k;
+								sum += input[⁠g_idx_i] * weight[g_idx_k];
+							}
+						}
+						output[g_idx_o] += sum;
+					}
+				}
+			}
+		}
+	}
+	return outTensor;
+}
 
 template <typename T>
 void convolution(vector<float>& output, vector<T>& input, vector<float>& weight, int KH, int KW, int stride, int IN, int IC, int IH, int IW, int OC) {
@@ -48,7 +108,6 @@ void convolution(vector<float>& output, vector<T>& input, vector<float>& weight,
 		}
 	}
 }
-
 
 
 //int main()
