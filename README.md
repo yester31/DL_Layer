@@ -9,6 +9,8 @@ model <- network <- layer <- tensor
 run(forward, backward)
 
 Tensor 클래스 구현(초기)
+- Conv2d에 Tensor 적용 작업 및 weight 초기화 기능 필요
+- 위 작업을 위해 layer(functional) 클래스 필요 (구상중)
 
 기능
 ------------
