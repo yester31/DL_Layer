@@ -6,8 +6,7 @@
 
 #include "Utils.h"
 
-template <typename T>
-void eltwiseSum(vector<T>& output, vector<T>& input1, vector<T>& input2)
+void eltwiseSum(vector<float>& output, vector<float>& input1, vector<float>& input2)
 {
 	std::cout << "===== eltwiseSum func =====" << std::endl;
 	assert(input1.size() == input2.size());
@@ -17,8 +16,8 @@ void eltwiseSum(vector<T>& output, vector<T>& input1, vector<T>& input2)
 		output[i] = input1[i] + input2[i];
 	}
 }
-template <typename T>
-void eltwiseProd(vector<T>& output, vector<T>& input1, vector<T>& input2)
+
+void eltwiseProd(vector<float>& output, vector<float>& input1, vector<float>& input2)
 {
 	std::cout << "===== eltwiseProd func =====" << std::endl;
 	assert(input1.size() == input2.size());

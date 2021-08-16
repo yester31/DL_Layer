@@ -5,8 +5,7 @@
 ****************************************************************************/
 #include "Utils.h"
 
-template <typename T>
-void fullyConnected(vector<T>& Output, vector<T>& Input, vector<T>& Weight, int out_features, int input_n, int input_c, int input_h, int input_w) {
+void fullyConnected(vector<float>& Output, vector<float>& Input, vector<float>& Weight, int out_features, int input_n, int input_c, int input_h, int input_w) {
 
 	int in_features = input_c * input_h * input_w;
 	for (int n_idx = 0; n_idx < input_n; n_idx++)
@@ -40,28 +39,28 @@ void fullyConnected(vector<T>& Output, vector<T>& Input, vector<T>& Weight, int 
 }
 
 
-int fc_test()
-{
-	int IN = 2;
-	int IC = 2;
-	int IH = 4;
-	int IW = 4;
-
-	int OF = 3;
-
-	// weight[OC][lC][KH][KW] 
-	// 임시 weight 값 
-	vector<float> weight(OF * IC * IH * IW);
-	initTensor(weight);
-	valueCheck(weight, OF, IC, IH, IW, 1);
-
-	// d[IN][IC][IH][IW] 
-	// 임시 input 값 
-	vector<float> input(IN * IC * IH * IW);
-	initTensor(input);
-	valueCheck(input, IN, IC, IH, IW, 1);
-
-
-
-	return 0;
-}
+//int fc_test()
+//{
+//	int IN = 2;
+//	int IC = 2;
+//	int IH = 4;
+//	int IW = 4;
+//
+//	int OF = 3;
+//
+//	// weight[OC][lC][KH][KW] 
+//	// 임시 weight 값 
+//	vector<float> weight(OF * IC * IH * IW);
+//	initTensor(weight);
+//	valueCheck(weight, OF, IC, IH, IW, 1);
+//
+//	// d[IN][IC][IH][IW] 
+//	// 임시 input 값 
+//	vector<float> input(IN * IC * IH * IW);
+//	initTensor(input);
+//	valueCheck(input, IN, IC, IH, IW, 1);
+//
+//
+//
+//	return 0;
+//}

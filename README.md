@@ -12,24 +12,30 @@ Tensor 클래스 구현(초기)
 - Conv2d에 Tensor 적용 작업 및 weight 초기화 기능 필요
 - 위 작업을 위해 layer(functional) 클래스 필요 (구상중)
 
+Template 제거 
+
 기능
 ------------
-### forward layer 완성
+### 완성
 - Conventional_Conv2d
 - Zero_Padding
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
 - Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU)
+
+### 진행중
 - Dense(fullyconnected) 검증필요
 - Softmax 검증필요
+- Transformer(bgr->rgb, nhwc->nchw, resize?) 작업중
+- DataLoader 작업중
 
-### forward layer 예정
+
+### 예정
 - GlobalAvgPooling
 - Concat
 - BatchNorm
 - DeConvolution
-- Transformer(bgr->rgb, nhwc->nchw, resize?)
-- DataLoader
+
 
 ### 추후 예정
 - backward

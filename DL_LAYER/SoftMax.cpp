@@ -5,8 +5,7 @@
 ****************************************************************************/
 #include "Utils.h"
 
-template <typename T>
-void softMax(vector<T>& softMaxOutput, vector<T>& softMaxInput, int input_n, int lastNodeNumber)
+void softMax(vector<float>& softMaxOutput, vector<float>& softMaxInput, int input_n, int lastNodeNumber)
 {
 	for (int n_idx = 0; n_idx < input_n; n_idx++) { // batch
 		float sum = 0.0;

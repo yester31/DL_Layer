@@ -3,28 +3,30 @@
 /***************************************************************************
 	Conventional Convolution algotirhm (without any option)
 ****************************************************************************/
-#include "Utils.cpp"
+#include "Utils.h"
 
 // layer(functional) class 필요 ***
-template <typename T>
-Tensor<T> convolution(Tensor<T> &inTensor, int KH, int KW, int stride, int OC) {
+Tensor convolution(Tensor &inTensor, int KH, int KW, int stride, int OC) {
 	
 	// 1. weight 존재 유무 체크 없으면 -> 초기화 or 주입(전달)
-	Tensor<T> wTensor;
+	Tensor wTensor = Tensor(1,2,3,4);
 	// weight 초기화함수 필요 ***
 
+
+	float* weight = wTensor.getData();
+
 	// 2. input tensor 체크 
-	vector<T> *input = inTensor.data.data();
-	int IN = inTensor.shape[0];
-	int IC = inTensor.shape[1];
-	int IH = inTensor.shape[2];
-	int IW = inTensor.shape[3];
+	float* input = inTensor.getData();
+	int IN = inTensor.getShape()[0];
+	int IC = inTensor.getShape()[1];
+	int IH = inTensor.getShape()[2];
+	int IW = inTensor.getShape()[3];
 
 	// 3. output tenosr 생성
 	int OH = ((IH - KH) / stride) + 1;
 	int OW = ((IW - KW) / stride) + 1;
-	Tensor<T> outTensor(IN, OC, OH, OW);
-	vector<T> *output = outTensor.data.data();
+	Tensor outTensor(IN, OC, OH, OW);
+	float* output = outTensor.getData();
 
 	// 4. 연산 수행 
 	std::cout << "===== Convolution ===== \n" << std::endl;
@@ -65,8 +67,7 @@ Tensor<T> convolution(Tensor<T> &inTensor, int KH, int KW, int stride, int OC) {
 	return outTensor;
 }
 
-template <typename T>
-void convolution(vector<float>& output, vector<T>& input, vector<float>& weight, int KH, int KW, int stride, int IN, int IC, int IH, int IW, int OC) {
+void convolution(vector<float>& output, vector<float>& input, vector<float>& weight, int KH, int KW, int stride, int IN, int IC, int IH, int IW, int OC) {
 	int OH = ((IH - KH) / stride) + 1;
 	int OW = ((IW - KW) / stride) + 1;
 	std::cout << "===== Convolution ===== \n" << std::endl;

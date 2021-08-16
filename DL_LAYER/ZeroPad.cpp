@@ -5,8 +5,7 @@
 ****************************************************************************/
 #include "Utils.h"
 
-template <typename T>
-void zeroPadding(vector<T>& output, vector<T>& input, int IN, int IC, int IH, int IW, int TP, int BP, int LP, int RP) {
+void zeroPadding(vector<float>& output, vector<float>& input, int IN, int IC, int IH, int IW, int TP, int BP, int LP, int RP) {
 	cout << "===== Zero Padding ===== \n";
 
 	int C_offset_i, C_offset_o,

@@ -7,33 +7,27 @@
 
 enum act_func{Linear, Sigmoid, Tanh, ReLU, Swish, LeakRelu};
 
-template <typename T>
-T act_Sigmoid(T x) {
+float act_Sigmoid(float x) {
 	return (1.f / (exp(-x) + 1.f));
 }
 
-template <typename T>
-T act_Tanh(T x) {
+float act_Tanh(float x) {
 	return tanh(x);
 }
 
-template <typename T>
-T act_ReLU(T x) {
+float act_ReLU(float x) {
 	return (x >= 0 ? x : 0);
 }
 
-template <typename T>
-T act_Swish(T x) {
+float act_Swish(float x) {
 	return (x * act_Sigmoid(x));
 }
 
-template <typename T>
-T act_ReakyRelu(T x, T a = 0.01) {
+float act_ReakyRelu(float x, float a = 0.01) {
 	return (x >= 0 ? x : a * x);
 }
 
-template <typename T>
-const T ActivationMode(const T x, act_func Mode, const T a)
+const float ActivationMode(const float x, act_func Mode, const float a)
 {
 	switch (Mode)
 	{
@@ -57,8 +51,7 @@ const T ActivationMode(const T x, act_func Mode, const T a)
 	}
 }
 
-template <typename T>
-void activation(vector<T>& Output, vector<T>& Input, act_func mode = Linear, const T a = 0.01) {
+void activation(vector<float>& Output, vector<float>& Input, act_func mode = Linear, const float a = 0.01) {
 	cout << "===== activation ===== \n";
 	Output.resize(Input.size());
 
@@ -69,30 +62,30 @@ void activation(vector<T>& Output, vector<T>& Input, act_func mode = Linear, con
 }
 
 
-int activateion_test() 
-{
-	vector<float> input(10);
-	vector<float> output(10);
-
-	//initTensor(input, 1.f, 1.f);
-	initTensor(input, "random");
-
-	//activation(output, input, act_func::Sigmoid);
-	//activation(output, input, act_func::Tanh);
-	//activation(output, input, act_func::ReLU);
-	//activation(output, input, act_func::Swish);
-	//activation(output, input, act_func::LeakRelu);
-	activation(output, input, act_func::Linear);
-
-	valueCheck(output);
-
-	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Sigmoid");
-	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Tanh");
-	//tofile(output, "../Calc_Validation/output/C_Tensor_A_ReLU");
-	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Swish");
-	//tofile(output, "../Calc_Validation/output/C_Tensor_A_LeakRelu");
-
-
-
-	return 0;
-}
+//int activateion_test() 
+//{
+//	vector<float> input(10);
+//	vector<float> output(10);
+//
+//	//initTensor(input, 1.f, 1.f);
+//	initTensor(input, "random");
+//
+//	//activation(output, input, act_func::Sigmoid);
+//	//activation(output, input, act_func::Tanh);
+//	//activation(output, input, act_func::ReLU);
+//	//activation(output, input, act_func::Swish);
+//	//activation(output, input, act_func::LeakRelu);
+//	activation(output, input, act_func::Linear);
+//
+//	valueCheck(output);
+//
+//	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Sigmoid");
+//	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Tanh");
+//	//tofile(output, "../Calc_Validation/output/C_Tensor_A_ReLU");
+//	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Swish");
+//	//tofile(output, "../Calc_Validation/output/C_Tensor_A_LeakRelu");
+//
+//
+//
+//	return 0;
+//}

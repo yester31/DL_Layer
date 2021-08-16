@@ -5,8 +5,8 @@
 ****************************************************************************/
 #include "Utils.h"
 
-template <typename T>
-void avgPooling(vector<T>& avgPoolingOutput, vector<T>& avgPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {
+
+void avgPooling(vector<float>& avgPoolingOutput, vector<float>& avgPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {
 	//cout << "===== AvgPooling ===== \n";	
 	//avgPoolingOutput.resize(input_n*input_c*poolingOutputHeight*poolingOutputWidth);
 	float poolingWindowAreaInverse = 1.f / (poolingWindow * poolingWindow);
@@ -38,8 +38,8 @@ void avgPooling(vector<T>& avgPoolingOutput, vector<T>& avgPoolingInput, int inp
 		}
 	}
 }
-template <typename T>
-void maxPooling(vector<T>& maxPoolingOutput, vector<T>& maxPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {
+
+void maxPooling(vector<float>& maxPoolingOutput, vector<float>& maxPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {
 	cout << "===== maxPooling ===== \n";
 
 	int temp1i = input_h * input_w * input_c;
