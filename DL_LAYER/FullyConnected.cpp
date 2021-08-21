@@ -3,7 +3,7 @@
 /***************************************************************************
 	FullyConnected algotirhm
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 void fullyConnected(vector<float>& Output, vector<float>& Input, vector<float>& Weight, int out_features, int input_n, int input_c, int input_h, int input_w) {
 

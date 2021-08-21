@@ -27,9 +27,6 @@
     <ClCompile Include="ZeroPad.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Activation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -45,9 +42,15 @@
     <ClCompile Include="DataLoader.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Tensor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils.h">
+    <ClInclude Include="Tensor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

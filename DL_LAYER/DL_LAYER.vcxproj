@@ -165,7 +165,7 @@
     <ClCompile Include="FullyConnected.cpp" />
     <ClCompile Include="Pool2d.cpp" />
     <ClCompile Include="SoftMax.cpp" />
-    <ClCompile Include="Utils.cpp">
+    <ClCompile Include="Tensor.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="WeightInitializer.cpp">
@@ -174,7 +174,8 @@
     <ClCompile Include="ZeroPad.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Utils.h" />
+    <ClInclude Include="Layer.h" />
+    <ClInclude Include="Tensor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 #include <vector>
 #include <iomanip> // for setw()
 #include <fstream>
-#include "Utils.h"
+#include "Tensor.h"
 using namespace std;
 
 void Tensor::valueCheck() {

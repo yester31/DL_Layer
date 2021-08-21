@@ -3,7 +3,7 @@
 /***************************************************************************
 	Activateion function algotirhm (Tanh, ReLU, Sigmoid)
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 enum act_func{Linear, Sigmoid, Tanh, ReLU, Swish, LeakRelu};
 

@@ -3,13 +3,14 @@
 /***************************************************************************
 	Conventional Convolution algotirhm (without any option)
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 // layer(functional) class 필요 ***
 Tensor convolution(Tensor &inTensor, int KH, int KW, int stride, int OC) {
 	
 	// 1. weight 존재 유무 체크 없으면 -> 초기화 or 주입(전달)
-	Tensor wTensor = Tensor(1,2,3,4);
+	Tensor wTensor1(1,2,3,4);
+	Tensor wTensor = wTensor1;
 	// weight 초기화함수 필요 ***
 
 

@@ -3,7 +3,7 @@
 /***************************************************************************
 	Pooling algotirhm (avg & max)
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 
 void avgPooling(vector<float>& avgPoolingOutput, vector<float>& avgPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {

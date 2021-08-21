@@ -3,8 +3,7 @@
 /***************************************************************************
 	Pooling algotirhm (avg & max)
 ****************************************************************************/
-
-#include "Utils.h"
+#include "Tensor.h"
 
 void eltwiseSum(vector<float>& output, vector<float>& input1, vector<float>& input2)
 {

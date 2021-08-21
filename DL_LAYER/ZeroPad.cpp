@@ -3,7 +3,7 @@
 /***************************************************************************
 	Conventional Convolution algotirhm (with zeropadding option)
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 void zeroPadding(vector<float>& output, vector<float>& input, int IN, int IC, int IH, int IW, int TP, int BP, int LP, int RP) {
 	cout << "===== Zero Padding ===== \n";

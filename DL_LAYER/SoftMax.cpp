@@ -3,7 +3,7 @@
 /***************************************************************************
 	FullyConnected algotirhm
 ****************************************************************************/
-#include "Utils.h"
+#include "Tensor.h"
 
 void softMax(vector<float>& softMaxOutput, vector<float>& softMaxInput, int input_n, int lastNodeNumber)
 {
