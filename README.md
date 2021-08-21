@@ -9,10 +9,12 @@ model <- network <- layer <- tensor
 run(forward, backward)
 
 Tensor 클래스 구현(초기)
-- Conv2d에 Tensor 적용 작업 및 weight 초기화 기능 필요
-- 위 작업을 위해 layer(functional) 클래스 필요 (구상중)
+- Conv2d에 Tensor 적용 작업 및 weight 초기화 기능 필요 (완료)
+- 위 작업을 위해 layer(functional) 클래스 추가 (완료)
+- Template 제거 (완료)
 
-Template 제거 
+Layer 클래스 구현
+- 각 layer들 클래스 구현
 
 기능
 ------------
@@ -22,12 +24,14 @@ Template 제거
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
 - Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU)
+- Weight initialization(Kaiming He Uniform)
+- DataLoader 
+
 
 ### 진행중
 - Dense(fullyconnected) 검증필요
 - Softmax 검증필요
 - Transformer(bgr->rgb, nhwc->nchw, resize?) 작업중
-- DataLoader 작업중
 
 
 ### 예정
