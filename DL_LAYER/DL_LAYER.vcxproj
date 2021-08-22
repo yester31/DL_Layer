@@ -172,6 +172,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="ZeroPad.cpp" />
+    <ClCompile Include="Concat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Layer.h" />

@@ -28,7 +28,6 @@ void eltwiseProd(vector<float>& output, vector<float>& input1, vector<float>& in
 }
 
 
-
 //int main()
 //{
 //	int IN = 2;

@@ -33,21 +33,31 @@ const float ActivationMode(const float x, act_func Mode, const float a)
 	{
 	case Linear:
 		return x;
+		break;
 
 	case Sigmoid:
 		return act_Sigmoid(x);
+		break;
 
 	case Tanh:
 		return act_Tanh(x);
+		break;
 
 	case ReLU:
 		return act_ReLU(x);
+		break;
 
 	case Swish:
 		return act_Swish(x);
+		break;
 
 	case LeakRelu:
 		return act_ReakyRelu(x, a);
+		break;
+	default: 
+		std::cout << "Unknown"; 
+		return 0;
+		break;
 	}
 }
 
@@ -60,7 +70,6 @@ void activation(vector<float>& Output, vector<float>& Input, act_func mode = Lin
 		Output[i] = ActivationMode(Input[i], mode, a);
 	}
 }
-
 
 //int activateion_test() 
 //{
@@ -84,8 +93,6 @@ void activation(vector<float>& Output, vector<float>& Input, act_func mode = Lin
 //	//tofile(output, "../Calc_Validation/output/C_Tensor_A_ReLU");
 //	//tofile(output, "../Calc_Validation/output/C_Tensor_A_Swish");
 //	//tofile(output, "../Calc_Validation/output/C_Tensor_A_LeakRelu");
-//
-//
 //
 //	return 0;
 //}

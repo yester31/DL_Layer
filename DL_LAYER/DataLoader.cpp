@@ -91,7 +91,8 @@ int SearchFile(const std::string& folder_path, std::vector<std::string> &file_na
 //}
 
 
-int main()
+//int main()
+int test_dataloader()
 {
 	// 0. 이미지경로 로드
 	std::string img_dir = "../data";
@@ -142,8 +143,6 @@ int main()
 		}
 	}
 	memcpy(input_t.getData(), output.data(), batch_size * input_height * input_width * 3);
-
-
 
 	return 0;
 }

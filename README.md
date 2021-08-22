@@ -26,6 +26,7 @@ Layer 클래스 구현
 - Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU)
 - Weight initialization(Kaiming He Uniform)
 - DataLoader 
+- Concat
 
 
 ### 진행중
@@ -36,7 +37,6 @@ Layer 클래스 구현
 
 ### 예정
 - GlobalAvgPooling
-- Concat
 - BatchNorm
 - DeConvolution
 

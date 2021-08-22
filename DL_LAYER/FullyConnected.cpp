@@ -60,7 +60,5 @@ void fullyConnected(vector<float>& Output, vector<float>& Input, vector<float>& 
 //	initTensor(input);
 //	valueCheck(input, IN, IC, IH, IW, 1);
 //
-//
-//
 //	return 0;
 //}

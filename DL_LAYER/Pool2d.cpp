@@ -5,7 +5,6 @@
 ****************************************************************************/
 #include "Tensor.h"
 
-
 void avgPooling(vector<float>& avgPoolingOutput, vector<float>& avgPoolingInput, int input_n, int input_c, int input_h, int input_w, int poolingWindow, int poolingStride, int poolingOutputHeight, int poolingOutputWidth) {
 	//cout << "===== AvgPooling ===== \n";	
 	//avgPoolingOutput.resize(input_n*input_c*poolingOutputHeight*poolingOutputWidth);
@@ -79,7 +78,6 @@ void maxPooling(vector<float>& maxPoolingOutput, vector<float>& maxPoolingInput,
 }
 
 
-
 //int main()
 //{
 //	int IN = 2;
@@ -117,4 +115,3 @@ void maxPooling(vector<float>& maxPoolingOutput, vector<float>& maxPoolingInput,
 //	//tofile(poolingOutput, "../Calc_Validation/output/C_Tensor_avg_p"); // avg pooling »ç¿ë½Ã
 //
 //}
-//
