@@ -164,6 +164,7 @@
     <ClCompile Include="Eltwise.cpp" />
     <ClCompile Include="FullyConnected.cpp" />
     <ClCompile Include="Pool2d.cpp" />
+    <ClCompile Include="Preprocess.cpp" />
     <ClCompile Include="SoftMax.cpp" />
     <ClCompile Include="Tensor.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>

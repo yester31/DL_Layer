@@ -24,16 +24,15 @@ Layer 클래스 구현
 - Pool2d (Avg, Max)
 - Eltwise (Prod, Sum)
 - Activation (Tan, Sigmoid, ReLU, Swish, reakyReLU)
-- Weight initialization(Kaiming He Uniform)
-- DataLoader 
+- DataLoader (load image paths from folder)
 - Concat
-
+- Preprocess (/255, Normalize(channel Standard Deviation), HWC->CHW, BGR->RGB)
 
 ### 진행중
+- Weight initialization(Kaiming He Uniform)
 - Dense(fullyconnected) 검증필요
 - Softmax 검증필요
 - Transformer(bgr->rgb, nhwc->nchw, resize?) 작업중
-
 
 ### 예정
 - GlobalAvgPooling

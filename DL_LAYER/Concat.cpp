@@ -47,7 +47,7 @@ void Concat(vector<float>& Output, vector<float>& Input1, vector<float>& Input2,
 }
 
 
-int main()
+int concat_test()
 {
 	int IN1 = 2;
 	int IN2 = 2;
@@ -79,4 +79,5 @@ int main()
 	std::cout << "======================================================" << std::endl;
 	std::cout << "dur time :: " << frame_sec3 << "micro sec" << std::endl;
 	tofile_b(output, "../Calc_Validation/output/C_Tensor_concat");
+	return 0;
 }

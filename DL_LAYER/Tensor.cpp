@@ -60,32 +60,22 @@ int utils_test()
 }
 
 
-void valueCheck_b(vector<float>& Input, int IN, int IC, int IH, int IW, bool one) {
-	std::cout << "===== valueCheck func =====" << std::endl;
-	if (one) IN = 1;
-
-	int N_offset = IC * IH * IW;
-	int C_offset, H_offset, W_offset, g_idx;
-	for (int ⁠n_idx = 0; ⁠n_idx < IN; ⁠n_idx++) {
-		C_offset = ⁠n_idx * N_offset;
-		for (int ⁠c_idx = 0; ⁠c_idx < IC; ⁠c_idx++) {
-			H_offset = ⁠c_idx * IW * IH + C_offset;
-			for (int ⁠h_idx = 0; ⁠h_idx < IH; ⁠h_idx++) {
-				W_offset = ⁠h_idx * IW + H_offset;
-				for (int w_idx = 0; w_idx < IW; w_idx++) {
-					g_idx = w_idx + W_offset;
-					std::cout << setw(5) << Input[g_idx] << " ";
-				}std::cout << std::endl;
-			}std::cout << std::endl; std::cout << std::endl;
-		}
-	}
-}
 
 void initTensor_b(vector<float>& output, float start, float step)
 {
 	std::cout << "===== InitTensor func (scalar or step)=====" << std::endl;
 	float count = start;
 	for (int i = 0; i < output.size(); i++) {
+		output[i] = count;
+		count += step;
+	}
+}
+
+void initTensor_b(uint8_t* output, uint64_t tot, uint8_t start, uint8_t step)
+{
+	std::cout << "===== InitTensor func (scalar or step)=====" << std::endl;
+	uint8_t count = start;
+	for (int i = 0; i < tot; i++) {
 		output[i] = count;
 		count += step;
 	}
@@ -100,6 +90,7 @@ void initTensor_b(vector<float>& output, string random, float min, float max)
 	}
 }
 
+
 void scalarTensor_b(vector<float>& output, int N, int C, int H, int W, float start, float step) {
 	std::cout << "===== scalarTensor func =====" << std::endl;
 	std::cout << "Tensor[" << N << "][" << C << "][" << H << "][" << W << "]" << std::endl << std::endl;
@@ -108,6 +99,14 @@ void scalarTensor_b(vector<float>& output, int N, int C, int H, int W, float sta
 		output.resize(tot_size);
 	initTensor_b(output, start, step);
 }
+
+void scalarTensor_b(uint8_t* output, int N, int C, int H, int W, uint8_t start, uint8_t step) {
+	std::cout << "===== scalarTensor func =====" << std::endl;
+	std::cout << "Tensor[" << N << "][" << C << "][" << H << "][" << W << "]" << std::endl << std::endl;
+	uint64_t tot_size = N * C * H * W;
+	initTensor_b(output, tot_size, start, step);
+}
+
 
 void tofile_b(vector<float> &Buffer, string fname) {
 	std::ofstream fs(fname, ios::binary);

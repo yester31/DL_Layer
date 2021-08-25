@@ -124,8 +124,31 @@ private:
 	uint64_t totSize;
 };
 
+template<typename T>
+void valueCheck_b(vector<T>& Input, int IN, int IC, int IH, int IW, bool one = false) {
+	std::cout << "===== valueCheck func =====" << std::endl;
+	if (one) IN = 1;
 
-void valueCheck_b(vector<float>& Input, int IN = 1, int IC = 1, int IH = 1, int IW = 1, bool one = false);
+	int N_offset = IC * IH * IW;
+	int C_offset, H_offset, W_offset, g_idx;
+	for (int ⁠n_idx = 0; ⁠n_idx < IN; ⁠n_idx++) {
+		C_offset = ⁠n_idx * N_offset;
+		for (int ⁠c_idx = 0; ⁠c_idx < IC; ⁠c_idx++) {
+			H_offset = ⁠c_idx * IW * IH + C_offset;
+			for (int ⁠h_idx = 0; ⁠h_idx < IH; ⁠h_idx++) {
+				W_offset = ⁠h_idx * IW + H_offset;
+				for (int w_idx = 0; w_idx < IW; w_idx++) {
+					g_idx = w_idx + W_offset;
+					std::cout << setw(5) << static_cast <float> (Input[g_idx]) << " ";
+				}std::cout << std::endl;
+			}std::cout << std::endl; std::cout << std::endl;
+		}
+	}
+};
+
+void scalarTensor_b(uint8_t* output, int N, int C, int H, int W, uint8_t start, uint8_t step);
+
+void initTensor_b(uint8_t* output, uint64_t tot, uint8_t start, uint8_t step);
 
 void initTensor_b(vector<float>& output, float start = 1, float step = 0);
 
